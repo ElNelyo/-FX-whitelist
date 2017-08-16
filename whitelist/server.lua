@@ -1,22 +1,22 @@
 
 
 local WhiteList = {}
+local Discord = "ENTER_DISCORD"
 
 
 
 
 
 
-
- local notwhitelisted = "Vous devez être whitelisted pour rejoindre ce server, rejoignez discord.gg/HY6D2UZ"
- local steamiderr = "Erreur: Impossible de récupérer votre steamID"
+ local notwhitelisted = "You're not whitelisted, please join our discord.gg/"..Discord
+ local steamiderr = "Error: we can't find your steamID"
  local trouve = false 
 
 
  AddEventHandler("playerConnecting", function(playerName, setKickReason)
 
     local steamID = GetPlayerIdentifiers(source)[1] or false
-     print("Whitelist: "..playerName.."["..steamID.."] tente de se connecter")
+     print("Whitelist: "..playerName.."["..steamID.."] try to connect")
 
 
        if not steamID then
@@ -24,7 +24,7 @@ local WhiteList = {}
         setKickReason(steamiderr)
         CancelEvent()
 
-        print("Whitelist: "..playerName.." a été kick, aucun IDSteam")
+        print("Whitelist: "..playerName.." kicked, no IDSteam")
 
 
        end
@@ -57,7 +57,7 @@ local WhiteList = {}
 
       --print(trouve)
       if(trouve)then 
-           print("Whitelist: "..playerName.."["..steamID.."]  a rejoins , trouve dans whitelist")
+           print("Whitelist: "..playerName.."["..steamID.."]  joined , whitelisted")
            trouve = false
            WhiteList = {}
 
@@ -66,7 +66,7 @@ local WhiteList = {}
                  setKickReason(notwhitelisted)
                     CancelEvent()
 
-                    print("Whitelist: "..playerName.."["..steamID.."] a ete kick, non whiteliste ")
+                    print("Whitelist: "..playerName.."["..steamID.."] kicked, no whitelisted ")
                     trouve = false
                     WhiteList = {}
                     return

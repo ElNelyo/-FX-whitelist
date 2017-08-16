@@ -1,14 +1,14 @@
-# -FX-whitelist
+# FX-whitelist
 Whitelist script for FX Server
 
 ## Getting Started
 1) Import .sql in your database
 
-2) Add whitelist folder into resource 
+2) Add whitelist folder into resources 
 
+3) Edit server.lua, just change the discord name
 
-
-3) Add in server.cfg
+4) Add in server.cfg
 
 ```
 start whitelist
