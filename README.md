@@ -1,5 +1,5 @@
 # FX-whitelist
-Whitelist script for FX Server
+Whitelist script for FX Server by database (without server reboot)
 
 ## Getting Started
 1) Import .sql in your database
@@ -16,7 +16,7 @@ start whitelist
 
 ## How to use 
 
-Simple add steamid in whitelist table , you don't need to reboot the server 
+Simple add steamid in whitelist table
 
 ```
 steam:110000106XXXXXf6e
